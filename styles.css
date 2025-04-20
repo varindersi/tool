@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato:wght@400;700&display=swap');
+
+:root {
+    /* Brand Colors */
+    --color-primary: #6B00F5;
+    --color-secondary: #FF2E93;
+    --color-accent: #FFD700;
+    --color-background: #F8F1E9;
+    --color-text-dark: #2E2E2E;
+    --color-text-light: #FFFFFF;
+    
+    /* Gradients */
+    --gradient-main: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    --gradient-gold: linear-gradient(135deg, #FFD700, #FFA500);
+    --gradient-title: linear-gradient(135deg, #FFD700, #FF2E93);
+    --gradient-dark: linear-gradient(135deg, #2E2E2E, var(--color-primary));
+    
+    /* Typography */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Lato', sans-serif;
+    --font-size-title: 72px;
+    --font-size-card-title: 28px;
+    --font-size-subtitle: 24px;
+    --font-size-body: 16px;
+    
+    /* Spacing */
+    --spacing-xs: 12px;
+    --spacing-sm: 24px;
+    --spacing-md: 36px;
+    --spacing-lg: 48px;
+    --spacing-xl: 64px;
+    
+    /* Effects */
+    --shadow-sm: 0 8px 20px rgba(0,0,0,0.1);
+    --shadow-md: 0 15px 40px rgba(0,0,0,0.2);
+    --shadow-lg: 0 20px 60px rgba(0,0,0,0.3);
+    --glow-gold: 0 0 30px rgba(255,215,0,0.3);
+    --glow-pink: 0 0 30px rgba(255,46,147,0.3);
+}
+
+/* Base Styles */
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    background: var(--gradient-main);
+    color: var(--color-text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    opacity: 0;
+    transition: opacity 0.8s ease-in;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    padding: var(--spacing-xl) var(--spacing-md);
+    position: relative;
+    overflow: hidden;
+    background: var(--gradient-main);
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="rgba(255, 255, 255, 0.1)" d="M47.5,-51.1C59.8,-35.3,67.2,-17.6,66.1,-1.1C65,15.4,55.4,30.8,43.1,43.6C30.8,56.4,15.4,66.7,-1.9,68.6C-19.2,70.5,-38.4,64,-54.3,51.2C-70.2,38.4,-82.8,19.2,-81.8,1C-80.8,-17.2,-66.2,-34.4,-50.3,-50.2C-34.4,-66,-17.2,-80.4,0.2,-80.6C17.6,-80.8,35.3,-66.8,47.5,-51.1Z" transform="translate(100 100)" /></svg>') no-repeat center;
+    background-size: 120% 120%;
+    opacity: 0.2;
+    animation: rotateBackground 30s linear infinite;
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header h1 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-title);
+    margin: 0;
+    background: var(--gradient-title);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 4px 15px rgba(255,215,0,0.5);
+    letter-spacing: 2px;
+    animation: titleGlow 3s ease-in-out infinite;
+}
+
+.header .subtitle {
+    font-family: var(--font-body);
+    font-size: var(--font-size-subtitle);
+    color: var(--color-secondary);
+    margin: 25px 0;
+    font-style: italic;
+    text-shadow: 0 2px 8px rgba(255,46,147,0.4);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards 0.5s;
+}
+
+/* Tool Grid */
+.tool-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xl);
+    max-width: 1400px;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+
+.tool-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    padding: var(--spacing-lg);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.tool-card.visible {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+}
+
+.tool-card:hover {
+    transform: translateY(-15px) rotateX(10deg);
+    box-shadow: var(--shadow-lg), var(--glow-gold);
+}
+
+.tool-card h3 {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-card-title);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+}
+
+.tool-card p {
+    font-size: var(--font-size-body);
+    color: var(--color-text-dark);
+    line-height: 1.7;
+    margin-top: var(--spacing-xs);
+}
+
+/* Button Styles */
+.btn-primary {
+    background: var(--gradient-gold);
+    color: var(--color-primary);
+    border: none;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: 50px;
+    font-family: var(--font-heading);
+    font-size: var(--font-size-subtitle);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-sm), var(--glow-gold);
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: var(--spacing-lg);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards 0.8s;
+}
+
+.btn-primary:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-lg), var(--glow-gold);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background: var(--gradient-dark);
+    color: var(--color-text-light);
+    border-top: 2px solid var(--color-accent);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-gold);
+    opacity: 0.8;
+}
+
+.footer-links a {
+    color: var(--color-accent);
+    margin: 0 var(--spacing-sm);
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-secondary);
+    transition: width 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--color-secondary);
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+/* Animations */
+@keyframes titleGlow {
+    0%, 100% {
+        text-shadow: 0 4px 15px rgba(255,215,0,0.5);
+    }
+    50% {
+        text-shadow: 0 4px 25px rgba(255,46,147,0.7);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotateBackground {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .tool-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --font-size-title: 48px;
+        --font-size-subtitle: 20px;
+        --font-size-card-title: 24px;
+    }
+    
+    .tool-grid {
+        grid-template-columns: 1fr;
+        padding: var(--spacing-md);
+    }
+    
+    .header {
+        padding: var(--spacing-lg) var(--spacing-sm);
+        min-height: 40vh;
+    }
+    
+    .btn-primary {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+    --color-background: #1A1A1A;
+    --color-text-dark: #FFFFFF;
+    --shadow-sm: 0 8px 20px rgba(107,0,245,0.2);
+    --shadow-md: 0 15px 40px rgba(107,0,245,0.3);
+    --shadow-lg: 0 20px 60px rgba(107,0,245,0.4);
+}
+
+/* Glass Morphism */
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Reduce motion if user prefers */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+} 

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hex to RGB Converter - Free Online Color Tool | Color Design Toolkit</title>
+    <meta name="description" content="Convert between Hex and RGB color formats instantly. Free online tool for web designers and developers to convert color codes with live preview.">
+    <meta name="keywords" content="hex to rgb converter, color code converter, hex color converter, rgb color converter, web design tools, color format converter">
+    <meta name="author" content="Color Design Toolkit">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Hex to RGB Converter - Free Online Color Tool">
+    <meta property="og:description" content="Convert between Hex and RGB color formats instantly. Perfect for web designers and developers.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://colordesigntoolkit.com/tools/hex-to-rgb.html">
+    <meta property="og:image" content="https://colordesigntoolkit.com/images/hex-rgb-converter-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hex to RGB Converter - Free Online Color Tool">
+    <meta name="twitter:description" content="Convert between Hex and RGB color formats instantly">
+    <meta name="twitter:image" content="https://colordesigntoolkit.com/images/hex-rgb-converter-twitter.jpg">
+    <link rel="canonical" href="https://colordesigntoolkit.com/tools/hex-to-rgb.html">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../tools.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Hex to RGB Converter",
+        "description": "Convert between Hex and RGB color formats instantly",
+        "url": "https://colordesigntoolkit.com/tools/hex-to-rgb.html",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Convert Hex to RGB",
+            "Convert RGB to Hex",
+            "Live color preview",
+            "Copy color values"
+        ]
+    }
+    </script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="header-content">
+                <h1>Hex to RGB Converter</h1>
+                <p class="subtitle">Convert between color formats instantly</p>
+            </div>
+            <div class="header-actions">
+                <button id="themeToggle" class="btn-accent" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                    <span>Dark Mode</span>
+                </button>
+                <a href="../index.html" class="btn-accent" aria-label="Return to home page">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                    <span>Home</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="tool-content" role="main">
+            <!-- Top Ad Container -->
+            <div class="ad-container horizontal-ad" aria-label="Advertisement">
+                <!-- AdSense or other ad code will go here -->
+                <div class="ad-placeholder">Advertisement</div>
+            </div>
+
+            <div class="converter-container">
+                <div class="input-group">
+                    <label for="hexInput">Hex Color</label>
+                    <div class="input-with-preview">
+                        <input type="text" id="hexInput" placeholder="#000000" aria-label="Enter hex color code">
+                        <div class="color-preview" id="hexPreview" aria-label="Hex color preview"></div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="rgbInput">RGB Color</label>
+                    <div class="input-with-preview">
+                        <input type="text" id="rgbInput" placeholder="rgb(0, 0, 0)" aria-label="Enter RGB color values">
+                        <div class="color-preview" id="rgbPreview" aria-label="RGB color preview"></div>
+                    </div>
+                </div>
+
+                <!-- Middle Ad Container -->
+                <div class="ad-container vertical-ad" aria-label="Advertisement">
+                    <!-- AdSense or other ad code will go here -->
+                    <div class="ad-placeholder">Advertisement</div>
+                </div>
+
+                <div class="converter-actions">
+                    <button id="copyHex" class="btn-accent" aria-label="Copy hex color value">
+                        <i class="fas fa-copy" aria-hidden="true"></i>
+                        Copy Hex
+                    </button>
+                    <button id="copyRGB" class="btn-accent" aria-label="Copy RGB color value">
+                        <i class="fas fa-copy" aria-hidden="true"></i>
+                        Copy RGB
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bottom Ad Container -->
+            <div class="ad-container horizontal-ad" aria-label="Advertisement">
+                <!-- AdSense or other ad code will go here -->
+                <div class="ad-placeholder">Advertisement</div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-content">
+                <nav class="footer-links" aria-label="Footer navigation">
+                    <a href="../index.html">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </nav>
+                <div class="footer-credits">
+                    <p>© 2025 Color Design Toolkit. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Tooltip Container -->
+    <div id="tooltip" class="tooltip" role="tooltip" aria-hidden="true"></div>
+
+    <script src="../script.js"></script>
+</body>
+</html> 

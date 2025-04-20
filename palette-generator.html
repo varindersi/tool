@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Palette Generator - Create Custom Color Schemes | Color Design Toolkit</title>
+    <meta name="description" content="Generate beautiful color palettes instantly. Create, customize, and export professional color schemes for your design projects. Free online color palette generator tool.">
+    <meta name="keywords" content="color palette generator, color scheme creator, color combinations, design tools, web design colors, color palette maker, professional color schemes, color harmony">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Free Palette Generator - Create Custom Color Schemes | Color Design Toolkit">
+    <meta property="og:description" content="Generate beautiful color palettes instantly. Create, customize, and export professional color schemes for your design projects.">
+    <meta property="og:image" content="https://colordesigntoolkit.com/assets/palette-generator-preview.png">
+    <meta property="og:url" content="https://colordesigntoolkit.com/tools/palette-generator">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Palette Generator - Create Custom Color Schemes">
+    <meta name="twitter:description" content="Generate beautiful color palettes instantly. Create, customize, and export professional color schemes for your design projects.">
+    <meta name="twitter:image" content="https://colordesigntoolkit.com/assets/palette-generator-preview.png">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Palette Generator",
+        "description": "Generate beautiful color palettes instantly. Create, customize, and export professional color schemes for your design projects.",
+        "url": "https://colordesigntoolkit.com/tools/palette-generator",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Color palette generation",
+            "Custom color schemes",
+            "Export to PNG/JSON",
+            "Color history tracking",
+            "Favorites management"
+        ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="palette-generator.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="tool-header" role="banner">
+            <nav class="nav-bar" role="navigation">
+                <a href="../index.html" class="nav-logo" aria-label="Color Design Toolkit Home">
+                    <i class="fas fa-palette" aria-hidden="true"></i>
+                    Color Design Toolkit
+                </a>
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
+            </nav>
+            <div class="tool-intro">
+                <h1>Palette Generator</h1>
+                <p>Create stunning color combinations with our advanced palette generator</p>
+            </div>
+        </header>
+
+        <main class="tool-main" role="main">
+            <section class="control-panel glass" aria-labelledby="controlPanelTitle">
+                <h2 id="controlPanelTitle" class="visually-hidden">Color Controls</h2>
+                <div class="input-group">
+                    <label for="baseColor">Base Color</label>
+                    <div class="color-input-wrapper">
+                        <input type="text" id="baseColor" placeholder="#4A00E0" 
+                               pattern="^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+                               aria-label="Enter base color in hex format">
+                        <input type="color" id="colorPicker" value="#4A00E0" aria-label="Color picker">
+                    </div>
+                    <div class="color-suggestions" id="colorSuggestions" role="listbox" aria-label="Color suggestions">
+                        <!-- Suggestions will be populated by JS -->
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="paletteSize">Palette Size</label>
+                    <select id="paletteSize" aria-label="Select number of colors in palette">
+                        <option value="5">5 Colors</option>
+                        <option value="10" selected>10 Colors</option>
+                        <option value="15">15 Colors</option>
+                    </select>
+                </div>
+
+                <div class="button-group">
+                    <button id="generateBtn" class="btn-primary" aria-label="Generate color palette">
+                        <i class="fas fa-magic" aria-hidden="true"></i>
+                        Generate Palette
+                    </button>
+                    <button id="randomBtn" class="btn-secondary" aria-label="Generate random palette">
+                        <i class="fas fa-random" aria-hidden="true"></i>
+                        Random
+                    </button>
+                </div>
+            </section>
+
+            <section class="palette-section" aria-labelledby="paletteTitle">
+                <h2 id="paletteTitle" class="visually-hidden">Generated Palette</h2>
+                <div class="palette-container" id="paletteContainer" role="listbox" aria-label="Color palette">
+                    <!-- Palette will be generated here -->
+                </div>
+
+                <div class="palette-actions">
+                    <button id="saveBtn" class="btn-action" aria-label="Save current palette">
+                        <i class="fas fa-save" aria-hidden="true"></i>
+                        Save
+                    </button>
+                    <button id="favoriteBtn" class="btn-action" aria-label="Add to favorites">
+                        <i class="fas fa-heart" aria-hidden="true"></i>
+                        Add to Favorites
+                    </button>
+                    <button id="exportPNGBtn" class="btn-action" aria-label="Export as PNG">
+                        <i class="fas fa-image" aria-hidden="true"></i>
+                        Export PNG
+                    </button>
+                    <button id="exportJSONBtn" class="btn-action" aria-label="Export as JSON">
+                        <i class="fas fa-code" aria-hidden="true"></i>
+                        Export JSON
+                    </button>
+                </div>
+            </section>
+
+            <section class="history-section glass" aria-labelledby="historyTitle">
+                <div class="section-header">
+                    <h2 id="historyTitle">Recent Palettes</h2>
+                    <button id="clearHistoryBtn" class="btn-text" aria-label="Clear history">
+                        <i class="fas fa-trash" aria-hidden="true"></i>
+                        Clear
+                    </button>
+                </div>
+                <div class="history-container" id="historyContainer" role="list" aria-label="Recent palettes">
+                    <!-- History will be populated by JS -->
+                </div>
+            </section>
+
+            <section class="favorites-section glass" aria-labelledby="favoritesTitle">
+                <div class="section-header">
+                    <h2 id="favoritesTitle">Favorites</h2>
+                    <button id="clearFavoritesBtn" class="btn-text" aria-label="Clear favorites">
+                        <i class="fas fa-trash" aria-hidden="true"></i>
+                        Clear
+                    </button>
+                </div>
+                <div class="favorites-container" id="favoritesContainer" role="list" aria-label="Favorite palettes">
+                    <!-- Favorites will be populated by JS -->
+                </div>
+            </section>
+        </main>
+
+        <div id="tooltip" class="tooltip" role="alert" aria-hidden="true"></div>
+
+        <footer class="tool-footer" role="contentinfo">
+            <div class="footer-content">
+                <nav class="footer-links" aria-label="Footer navigation">
+                    <a href="../about.html">About</a>
+                    <a href="../contact.html">Contact</a>
+                    <a href="../privacy-policy.html">Privacy Policy</a>
+                    <a href="../faq.html">FAQ</a>
+                </nav>
+                <p class="copyright">© 2024 Color Design Toolkit. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="palette-generator.js" defer></script>
+</body>
+</html> 

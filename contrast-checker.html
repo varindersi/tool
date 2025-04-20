@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Contrast Checker - Free Accessibility Tool | Color Design Toolkit</title>
+    <meta name="description" content="Check color contrast ratios for accessibility compliance. Free online tool for testing WCAG 2.1 standards, perfect for web designers and developers.">
+    <meta name="keywords" content="color contrast checker, accessibility tool, WCAG compliance, web accessibility, color contrast ratio, accessibility testing, design tools">
+    <meta name="author" content="Color Design Toolkit">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Color Contrast Checker - Free Accessibility Tool">
+    <meta property="og:description" content="Check color contrast ratios for accessibility compliance. Perfect for web designers and developers.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://colordesigntoolkit.com/tools/contrast-checker.html">
+    <meta property="og:image" content="https://colordesigntoolkit.com/images/contrast-checker-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Color Contrast Checker - Free Accessibility Tool">
+    <meta name="twitter:description" content="Check color contrast ratios for accessibility compliance">
+    <meta name="twitter:image" content="https://colordesigntoolkit.com/images/contrast-checker-twitter.jpg">
+    <link rel="canonical" href="https://colordesigntoolkit.com/tools/contrast-checker.html">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../tools.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Color Contrast Checker",
+        "description": "Check color contrast ratios for accessibility compliance",
+        "url": "https://colordesigntoolkit.com/tools/contrast-checker.html",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Check WCAG 2.1 compliance",
+            "Test normal and large text contrast",
+            "Preview text with selected colors",
+            "Get detailed contrast ratio analysis"
+        ]
+    }
+    </script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="header-content">
+                <h1>Contrast Checker</h1>
+                <p class="subtitle">Ensure your colors meet accessibility standards</p>
+            </div>
+            <div class="header-actions">
+                <button id="themeToggle" class="btn-accent" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                    <span>Dark Mode</span>
+                </button>
+                <a href="../index.html" class="btn-accent" aria-label="Return to home page">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                    <span>Home</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="tool-content" role="main">
+            <!-- Top Ad Container -->
+            <div class="ad-container horizontal-ad" aria-label="Advertisement">
+                <!-- AdSense or other ad code will go here -->
+                <div class="ad-placeholder">Advertisement</div>
+            </div>
+
+            <div class="contrast-container">
+                <div class="color-inputs">
+                    <div class="input-group">
+                        <label>Foreground Color</label>
+                        <div class="input-with-preview">
+                            <input type="color" id="foregroundColor" value="#000000" aria-label="Select foreground color">
+                            <input type="text" id="foregroundHex" value="#000000" aria-label="Foreground color hex value">
+                        </div>
+                    </div>
+
+                    <!-- Middle Ad Container -->
+                    <div class="ad-container vertical-ad" aria-label="Advertisement">
+                        <!-- AdSense or other ad code will go here -->
+                        <div class="ad-placeholder">Advertisement</div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Background Color</label>
+                        <div class="input-with-preview">
+                            <input type="color" id="backgroundColor" value="#ffffff" aria-label="Select background color">
+                            <input type="text" id="backgroundHex" value="#ffffff" aria-label="Background color hex value">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="preview-container">
+                    <div class="contrast-preview" id="contrastPreview" aria-label="Text preview with selected colors">
+                        <p>Sample Text</p>
+                    </div>
+                </div>
+
+                <div class="contrast-results">
+                    <div class="result-card">
+                        <h3>Contrast Ratio</h3>
+                        <p id="contrastRatio">21:1</p>
+                        <div class="rating" id="contrastRating">
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            <span>AAA</span>
+                        </div>
+                    </div>
+                    <div class="result-card">
+                        <h3>WCAG Compliance</h3>
+                        <ul class="compliance-list">
+                            <li id="normalText">
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                Normal Text
+                            </li>
+                            <li id="largeText">
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                Large Text
+                            </li>
+                            <li id="uiElements">
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                UI Elements
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="contrast-actions">
+                    <button id="swapColors" class="btn-accent" aria-label="Swap foreground and background colors">
+                        <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                        Swap Colors
+                    </button>
+                    <button id="copyResults" class="btn-accent" aria-label="Copy contrast results">
+                        <i class="fas fa-copy" aria-hidden="true"></i>
+                        Copy Results
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bottom Ad Container -->
+            <div class="ad-container horizontal-ad" aria-label="Advertisement">
+                <!-- AdSense or other ad code will go here -->
+                <div class="ad-placeholder">Advertisement</div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-content">
+                <nav class="footer-links" aria-label="Footer navigation">
+                    <a href="../index.html">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </nav>
+                <div class="footer-credits">
+                    <p>© 2025 Color Design Toolkit. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Tooltip Container -->
+    <div id="tooltip" class="tooltip" role="tooltip" aria-hidden="true"></div>
+
+    <script src="../script.js"></script>
+</body>
+</html> 

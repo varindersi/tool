@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color Picker - Free Online Tool | Color Design Toolkit</title>
+    <meta name="description" content="Discover beautiful random color combinations for your design projects. Free online tool for generating random colors, perfect for web designers and developers.">
+    <meta name="keywords" content="random color picker, color generator, color combinations, design inspiration, web design, color palette">
+    <meta name="author" content="Color Design Toolkit">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Random Color Picker - Free Online Tool">
+    <meta property="og:description" content="Discover beautiful random color combinations for your design projects. Perfect for web designers and developers.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://colordesigntoolkit.com/tools/random-picker.html">
+    <meta property="og:image" content="https://colordesigntoolkit.com/images/random-picker-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Random Color Picker - Free Online Tool">
+    <meta name="twitter:description" content="Discover beautiful random color combinations for your design projects">
+    <meta name="twitter:image" content="https://colordesigntoolkit.com/images/random-picker-twitter.jpg">
+    <link rel="canonical" href="https://colordesigntoolkit.com/tools/random-picker.html">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../tools.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Random Color Picker",
+        "description": "Discover beautiful random color combinations for your design projects",
+        "url": "https://colordesigntoolkit.com/tools/random-picker.html",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Generate random color combinations",
+            "Choose color type (Any, Pastel, Vibrant, Monochrome)",
+            "Save favorite color palettes",
+            "Copy color values in multiple formats"
+        ]
+    }
+    </script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="header-content">
+                <h1>Random Picker</h1>
+                <p class="subtitle">Discover beautiful color combinations</p>
+            </div>
+            <div class="header-actions">
+                <button id="themeToggle" class="btn-accent" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                    <span>Dark Mode</span>
+                </button>
+                <a href="../index.html" class="btn-accent" aria-label="Return to home page">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                    <span>Home</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="tool-content" role="main">
+            <!-- Top Ad Container -->
+            <div class="ad-container horizontal-ad" aria-label="Advertisement">
+                <!-- AdSense or other ad code will go here -->
+                <div class="ad-placeholder">Advertisement</div>
+            </div>
+
+            <div class="random-container">
+                <div class="random-controls">
+                    <div class="input-group">
+                        <label>Number of Colors</label>
+                        <input type="range" id="colorCount" min="1" max="10" value="5" aria-label="Number of colors to generate">
+                        <span id="colorCountValue">5</span>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Color Type</label>
+                        <select id="colorType" aria-label="Select color type">
+                            <option value="any">Any Color</option>
+                            <option value="pastel">Pastel</option>
+                            <option value="vibrant">Vibrant</option>
+                            <option value="monochrome">Monochrome</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Middle Ad Container -->
+                <div class="ad-container vertical-ad" aria-label="Advertisement">
+                    <!-- AdSense or other ad code will go here -->
+                    <div class="ad-placeholder">Advertisement</div>
+                </div>
+
+                <div class="random-grid" id="randomGrid" aria-label="Generated random colors">
+                    <!-- Random colors will be generated here -->
+                </div>
+
+                <div class="random-actions">
+                    <button id="generateRandom" class="btn-accent" aria-label="Generate new random colors">
+                        <i class="fas fa-sync-alt" aria-hidden="true"></i>
+                        Generate
+                    </button>
+                    <button id="savePalette" class="btn-accent" aria-label="Save current color palette">
+                        <i class="fas fa-save" aria-hidden="true"></i>
+                        Save
+                    </button>
+                    <button id="copyAllColors" class="btn-accent" aria-label="Copy all generated colors">
+                        <i class="fas fa-copy" aria-hidden="true"></i>
+                        Copy All
+                    </button>
+                </div>
+
+                <div class="saved-palettes" id="savedPalettes" aria-label="Saved color palettes">
+                    <h2>Saved Palettes</h2>
+                    <!-- Saved palettes will be displayed here -->
+                </div>
+            </div>
+
+            <!-- Bottom Ad Container -->
+            <div class="ad-container horizontal-ad" aria-label="Advertisement">
+                <!-- AdSense or other ad code will go here -->
+                <div class="ad-placeholder">Advertisement</div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-content">
+                <nav class="footer-links" aria-label="Footer navigation">
+                    <a href="../index.html">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </nav>
+                <div class="footer-credits">
+                    <p>© 2025 Color Design Toolkit. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Tooltip Container -->
+    <div id="tooltip" class="tooltip" role="tooltip" aria-hidden="true"></div>
+
+    <script src="../script.js"></script>
+</body>
+</html> 

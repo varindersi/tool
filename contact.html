@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Color Design Toolkit</title>
+    <meta name="description" content="Get in touch with the Color Design Toolkit team. We'd love to hear your feedback, suggestions, or questions about our color tools.">
+    <meta name="keywords" content="contact color design toolkit, color tools support, design tools feedback, color design help">
+    <meta name="author" content="Color Design Toolkit">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="header-content">
+                <h1>Contact Us</h1>
+                <p class="subtitle">We'd love to hear from you</p>
+            </div>
+            <div class="header-actions">
+                <button id="themeToggle" class="btn-accent" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                    <span>Dark Mode</span>
+                </button>
+                <a href="index.html" class="btn-accent" aria-label="Return to home page">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                    <span>Home</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="contact-content" role="main">
+            <section class="contact-section" aria-labelledby="contact-form-heading">
+                <h2 id="contact-form-heading">Get in Touch</h2>
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+                    </div>
+                    <button type="submit" class="btn-accent">Send Message</button>
+                </form>
+            </section>
+
+            <section class="contact-info" aria-labelledby="contact-info-heading">
+                <h2 id="contact-info-heading">Other Ways to Reach Us</h2>
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <h3>Email</h3>
+                        <a href="mailto:contact@colordesigntoolkit.com">contact@colordesigntoolkit.com</a>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                        <h3>GitHub</h3>
+                        <a href="https://github.com/colordesigntoolkit" target="_blank" rel="noopener noreferrer">github.com/colordesigntoolkit</a>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                        <h3>Twitter</h3>
+                        <a href="https://twitter.com/colordesigntool" target="_blank" rel="noopener noreferrer">@colordesigntool</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-content">
+                <nav class="footer-links" aria-label="Footer navigation">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                </nav>
+                <div class="footer-credits">
+                    <p>© 2025 Color Design Toolkit. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

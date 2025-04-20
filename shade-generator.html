@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Shade Generator - Free Online Tool | Color Design Toolkit</title>
+    <meta name="description" content="Generate perfect color shades and tints for your design projects. Free online tool for creating color variations, ideal for web designers and developers.">
+    <meta name="keywords" content="color shade generator, color tints, color variations, color palette, design tools, web design, color scheme">
+    <meta name="author" content="Color Design Toolkit">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Color Shade Generator - Free Online Tool">
+    <meta property="og:description" content="Generate perfect color shades and tints for your design projects. Ideal for web designers and developers.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://colordesigntoolkit.com/tools/shade-generator.html">
+    <meta property="og:image" content="https://colordesigntoolkit.com/images/shade-generator-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Color Shade Generator - Free Online Tool">
+    <meta name="twitter:description" content="Generate perfect color shades and tints for your design projects">
+    <meta name="twitter:image" content="https://colordesigntoolkit.com/images/shade-generator-twitter.jpg">
+    <link rel="canonical" href="https://colordesigntoolkit.com/tools/shade-generator.html">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../tools.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Color Shade Generator",
+        "description": "Generate perfect color shades and tints for your design projects",
+        "url": "https://colordesigntoolkit.com/tools/shade-generator.html",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Generate color shades and tints",
+            "Adjust shade range and count",
+            "Preview all generated colors",
+            "Copy color values in multiple formats"
+        ]
+    }
+    </script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="header-content">
+                <h1>Shade Generator</h1>
+                <p class="subtitle">Create perfect color variations</p>
+            </div>
+            <div class="header-actions">
+                <button id="themeToggle" class="btn-accent" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                    <span>Dark Mode</span>
+                </button>
+                <a href="../index.html" class="btn-accent" aria-label="Return to home page">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                    <span>Home</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="tool-content" role="main">
+            <!-- Top Ad Container -->
+            <div class="ad-container horizontal-ad" aria-label="Advertisement">
+                <!-- AdSense or other ad code will go here -->
+                <div class="ad-placeholder">Advertisement</div>
+            </div>
+
+            <div class="shade-container">
+                <div class="shade-controls">
+                    <div class="input-group">
+                        <label>Base Color</label>
+                        <div class="input-with-preview">
+                            <input type="color" id="baseColor" value="#ff0000" aria-label="Select base color">
+                            <input type="text" id="baseHex" value="#ff0000" aria-label="Base color hex value">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Number of Shades</label>
+                        <input type="range" id="shadeCount" min="3" max="10" value="5" aria-label="Number of shades to generate">
+                        <span id="shadeCountValue">5</span>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Shade Range</label>
+                        <input type="range" id="shadeRange" min="10" max="90" value="50" aria-label="Shade range percentage">
+                        <span id="shadeRangeValue">50%</span>
+                    </div>
+                </div>
+
+                <!-- Middle Ad Container -->
+                <div class="ad-container vertical-ad" aria-label="Advertisement">
+                    <!-- AdSense or other ad code will go here -->
+                    <div class="ad-placeholder">Advertisement</div>
+                </div>
+
+                <div class="shade-grid" id="shadeGrid" aria-label="Generated color shades">
+                    <!-- Shades will be generated here -->
+                </div>
+
+                <div class="shade-actions">
+                    <button id="generateShades" class="btn-accent" aria-label="Generate new shades">
+                        <i class="fas fa-sync-alt" aria-hidden="true"></i>
+                        Generate
+                    </button>
+                    <button id="copyAllShades" class="btn-accent" aria-label="Copy all generated shades">
+                        <i class="fas fa-copy" aria-hidden="true"></i>
+                        Copy All
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bottom Ad Container -->
+            <div class="ad-container horizontal-ad" aria-label="Advertisement">
+                <!-- AdSense or other ad code will go here -->
+                <div class="ad-placeholder">Advertisement</div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="footer-content">
+                <nav class="footer-links" aria-label="Footer navigation">
+                    <a href="../index.html">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </nav>
+                <div class="footer-credits">
+                    <p>© 2025 Color Design Toolkit. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Tooltip Container -->
+    <div id="tooltip" class="tooltip" role="tooltip" aria-hidden="true"></div>
+
+    <script src="../script.js"></script>
+</body>
+</html> 
